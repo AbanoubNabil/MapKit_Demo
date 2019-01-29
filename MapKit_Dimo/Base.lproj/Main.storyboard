@@ -21,11 +21,11 @@
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="dBr-iq-BUE">
                                 <rect key="frame" x="0.0" y="639" width="375" height="29"/>
                                 <segments>
-                                    <segment title="Napoly"/>
-                                    <segment title="New York"/>
-                                    <segment title="Chicago"/>
-                                    <segment title="Chatham"/>
-                                    <segment title="Bev-Hits"/>
+                                    <segment title="MMD"/>
+                                    <segment title="insta Bug"/>
+                                    <segment title="MMD UK"/>
+                                    <segment title="CrossOver"/>
+                                    <segment title="Evirest"/>
                                 </segments>
                                 <connections>
                                     <action selector="segmented:" destination="BYZ-38-t0r" eventType="valueChanged" id="0jo-uF-Dm6"/>
