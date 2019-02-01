@@ -24,32 +24,38 @@ class ViewController: UIViewController {
         switch segmented.selectedSegmentIndex {
         case 0:
             location = CLLocationCoordinate2DMake(30.0405125,31.2174571)
-            updateMapCameraWith(heading: 45.0, altitute: 1000)
+            updateMapCameraWith(heading: 180, altitute: 1000.0)
+            break
         case 1:
             location = CLLocationCoordinate2DMake(30.0472733,31.2053506)
-            updateMapCameraWith(heading: 45.0, altitute: 100)
+            updateMapCameraWith(heading: 45.0, altitute: 5000.0)
+            break
         case 2:
             location = CLLocationCoordinate2DMake(52.4456775,-1.8840589)
-            updateMapCameraWith(heading: 45.0, altitute: 50)
+            updateMapCameraWith(heading: 90.0, altitute: 50)
+            break
         case 3:
             location = CLLocationCoordinate2DMake(52.4799864,-1.8363626)
-            updateMapCameraWith(heading: 45.0, altitute: 10)
+            updateMapCameraWith(heading: 180.0, altitute: 10)
+            break
         case 4:
             location = CLLocationCoordinate2DMake(27.9881199,86.9162203)
-            updateMapCameraWith(heading: 45.0, altitute: 1000)
+            updateMapCameraWith(heading: -20.0, altitute: 1000)
+            break
         default:
             location = CLLocationCoordinate2DMake(30.0405125,31.2174571)
-            updateMapCameraWith(heading: 45.0, altitute: 1000)
+            updateMapCameraWith(heading: 45.0, altitute: 45)
         }
         
-        updateMapWithRegion(distanec: 100)
+//        updateMapWithRegion(distanec: 100)
         
     }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        updateMapWithRegion(distanec: 100) // 100 meters around
+//        updateMapWithRegion(distanec: 100) // 100 meters around
+    updateMapCameraWith(heading: 0, altitute: 200.0)
     }
 
     func updateMapWithRegion(distanec: CLLocationDistance) {
