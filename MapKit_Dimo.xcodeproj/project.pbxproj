@@ -14,6 +14,7 @@
 		0FF19508222C0C89005FC0B0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FF19503222C0C89005FC0B0 /* LaunchScreen.storyboard */; };
 		0FF1950A222C0C99005FC0B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FF19509222C0C99005FC0B0 /* Assets.xcassets */; };
 		0FF1950C222C0CB5005FC0B0 /* MapView+Annotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF1950B222C0CB5005FC0B0 /* MapView+Annotation.swift */; };
+		0FF1950F222C10AE005FC0B0 /* PizzaHistoryAnnotations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF1950E222C10AE005FC0B0 /* PizzaHistoryAnnotations.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		0FF19503222C0C89005FC0B0 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
 		0FF19509222C0C99005FC0B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		0FF1950B222C0CB5005FC0B0 /* MapView+Annotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MapView+Annotation.swift"; sourceTree = "<group>"; };
+		0FF1950E222C10AE005FC0B0 /* PizzaHistoryAnnotations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PizzaHistoryAnnotations.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,13 +59,14 @@
 		0FDF7A2722008C5D0087655E /* MapKit_Dimo */ = {
 			isa = PBXGroup;
 			children = (
-				0FF19502222C0C89005FC0B0 /* Info.plist */,
 				0FF1950D222C0CBA005FC0B0 /* extentions */,
+				0FF1950E222C10AE005FC0B0 /* PizzaHistoryAnnotations.swift */,
+				0FF19501222C0C89005FC0B0 /* ViewController.swift */,
+				0FF19502222C0C89005FC0B0 /* Info.plist */,
 				0FF19500222C0C89005FC0B0 /* AppDelegate.swift */,
 				0FF19509222C0C99005FC0B0 /* Assets.xcassets */,
 				0FF19503222C0C89005FC0B0 /* LaunchScreen.storyboard */,
 				0FF194FF222C0C89005FC0B0 /* Main.storyboard */,
-				0FF19501222C0C89005FC0B0 /* ViewController.swift */,
 			);
 			path = MapKit_Dimo;
 			sourceTree = "<group>";
@@ -151,6 +154,7 @@
 			files = (
 				0FF19506222C0C89005FC0B0 /* ViewController.swift in Sources */,
 				0FF19505222C0C89005FC0B0 /* AppDelegate.swift in Sources */,
+				0FF1950F222C10AE005FC0B0 /* PizzaHistoryAnnotations.swift in Sources */,
 				0FF1950C222C0CB5005FC0B0 /* MapView+Annotation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

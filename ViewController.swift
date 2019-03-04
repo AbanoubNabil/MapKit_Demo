@@ -68,22 +68,32 @@ class ViewController: UIViewController {
         case 1:
             location = CLLocationCoordinate2DMake(40.7216294 , -73.995453)
             updateMapCameraWith(heading: 245.0, altitute: 250.0)
+//            let pin = PizzaAnnotation(coordinate: location, title: "New York", subtitle: "Pizza Comes To America")
+//            map.addAnnotation(pin)
             break
         case 2:
             location = CLLocationCoordinate2DMake(41.892479 , -87.6267592)
             updateMapCameraWith(heading: 90.0, altitute: 50)
+//            let pin = PizzaAnnotation(coordinate: location, title: "Checago", subtitle: "Pizza Comes To Checago")
+//            map.addAnnotation(pin)
             break
         case 3:
             location = CLLocationCoordinate2DMake(52.4799864,-1.8363626)
             updateMapCameraWith(heading: 180.0, altitute: 200)
+//            let pin = PizzaAnnotation(coordinate: location, title: "Chatham", subtitle: "Pizza Comes To Chatham")
+//            map.addAnnotation(pin)
             break
         case 4:
             location = CLLocationCoordinate2DMake(34.0674607 , -118.3977309)
             updateMapCameraWith(heading: -20.0, altitute: 70)
+//            let pin = PizzaAnnotation(coordinate: location, title: "CrossOver", subtitle: "Pizza Comes To CrossOver")
+//            map.addAnnotation(pin)
             break
         default:
-            location = CLLocationCoordinate2DMake(30.0405125,31.2174571)
+            location = CLLocationCoordinate2DMake(40.8367321,14.2468856)
             updateMapCameraWith(heading: 45.0, altitute: 45)
+//            let pin = PizzaAnnotation(coordinate: location, title: "Naples", subtitle: "Pizza Comes To Naples")
+//            map.addAnnotation(pin)
         }
         
 //        updateMapWithRegion(distanec: 100)
@@ -95,6 +105,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
 //        updateMapWithRegion(distanec: 100) // 100 meters around
     updateMapCameraWith(heading: 0, altitute: 200.0)
+        map.delegate = self
+        map.addAnnotations(PizzaHistoryAnnotations().annotations)
     }
 
     func updateMapWithRegion(distanec: CLLocationDistance) {
