@@ -51,7 +51,7 @@ class PizzaAnnotation: NSObject, MKAnnotation{
     var subtitle: String?
     var identifier  = "Pin"
     var historyText = ""
-    var pizzaPhoto : UIImage?
+    var pizzaPhoto = #imageLiteral(resourceName: "pizza pin")
     
     init(coordinate: CLLocationCoordinate2D , title: String?, subtitle: String?){
         self.coordinate = coordinate
