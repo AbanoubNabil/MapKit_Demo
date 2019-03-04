@@ -102,6 +102,7 @@ class ViewController: UIViewController {
     updateMapCameraWith(heading: 0, altitute: 200.0)
         map.delegate = self
         map.addAnnotations(PizzaHistoryAnnotations().annotations)
+        addDeliveryOverlay()
     }
 
     func updateMapWithRegion(distanec: CLLocationDistance) {
@@ -116,6 +117,14 @@ class ViewController: UIViewController {
         changePich.setTitle("0", for: .normal)
         camera.altitude = altitute
         map.camera = camera
+    }
+    
+    func addDeliveryOverlay()  {
+        let radius = 500.0
+        for annotation in map.annotations {
+            let circle = MKCircle(center: annotation.coordinate, radius: radius)
+            map.addOverlay(circle)
+        }
     }
 
 }

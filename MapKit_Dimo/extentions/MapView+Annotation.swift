@@ -43,6 +43,17 @@ extension ViewController : MKMapViewDelegate{
         vc.annotation = view.annotation as! PizzaAnnotation
         present(vc, animated: false,completion: nil)
     }
+    
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        if let circle = overlay as? MKCircle{
+            let renderer = MKCircleRenderer(circle: circle)
+            renderer.fillColor = UIColor(red: 0.0, green: 0.1, blue: 1.0, alpha: 0.1)
+            renderer.strokeColor = UIColor.blue
+            renderer.lineWidth = 1.0
+            return renderer
+        }
+        return MKOverlayRenderer(overlay: overlay)
+    }
 }
 
 class PizzaAnnotation: NSObject, MKAnnotation{
