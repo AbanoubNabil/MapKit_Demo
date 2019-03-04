@@ -11,6 +11,8 @@ import MapKit
 
 extension ViewController : MKMapViewDelegate{
     
+    
+    
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         var annotationView = MKAnnotationView()
         guard let annotation = annotation as? PizzaAnnotation else {
@@ -26,12 +28,20 @@ extension ViewController : MKMapViewDelegate{
         annotationView.image = UIImage(named: "pizza pin")
         
         let paragraph = UILabel()
-        paragraph.numberOfLines = 0
+        paragraph.numberOfLines = 1
         paragraph.font = UIFont.preferredFont(forTextStyle: .caption1)
-        paragraph.text = annotation.historyText
+        paragraph.text = annotation.subtitle
         annotationView.detailCalloutAccessoryView = paragraph
+        paragraph.adjustsFontSizeToFitWidth = true
         annotationView.leftCalloutAccessoryView = UIImageView(image: annotation.pizzaPhoto)
+        annotationView.rightCalloutAccessoryView = UIButton(type: .infoLight)
         return annotationView
+    }
+    
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        let vc = AnnotationDetailViewController(nibName: "AnnotationDetailViewController", bundle: nil)
+        vc.annotation = view.annotation as! PizzaAnnotation
+        present(vc, animated: false,completion: nil)
     }
 }
 

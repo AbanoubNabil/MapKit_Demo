@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0FC29ADA222D61C40070EF13 /* AnnotationDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FC29AD8222D61C40070EF13 /* AnnotationDetailViewController.xib */; };
+		0FC29ADB222D61C40070EF13 /* AnnotationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC29AD9222D61C40070EF13 /* AnnotationDetailViewController.swift */; };
 		0FF19504222C0C89005FC0B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FF194FF222C0C89005FC0B0 /* Main.storyboard */; };
 		0FF19505222C0C89005FC0B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF19500222C0C89005FC0B0 /* AppDelegate.swift */; };
 		0FF19506222C0C89005FC0B0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF19501222C0C89005FC0B0 /* ViewController.swift */; };
@@ -18,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0FC29AD8222D61C40070EF13 /* AnnotationDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AnnotationDetailViewController.xib; sourceTree = "<group>"; };
+		0FC29AD9222D61C40070EF13 /* AnnotationDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnnotationDetailViewController.swift; sourceTree = "<group>"; };
 		0FDF7A2522008C5D0087655E /* MapKit_Dimo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapKit_Dimo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FF194FF222C0C89005FC0B0 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = SOURCE_ROOT; };
 		0FF19500222C0C89005FC0B0 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = SOURCE_ROOT; };
@@ -40,6 +44,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0FC29AD7222D618E0070EF13 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0FC29AD9222D61C40070EF13 /* AnnotationDetailViewController.swift */,
+				0FC29AD8222D61C40070EF13 /* AnnotationDetailViewController.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		0FDF7A1C22008C5D0087655E = {
 			isa = PBXGroup;
 			children = (
@@ -59,6 +72,7 @@
 		0FDF7A2722008C5D0087655E /* MapKit_Dimo */ = {
 			isa = PBXGroup;
 			children = (
+				0FC29AD7222D618E0070EF13 /* Views */,
 				0FF1950D222C0CBA005FC0B0 /* extentions */,
 				0FF1950E222C10AE005FC0B0 /* PizzaHistoryAnnotations.swift */,
 				0FF19501222C0C89005FC0B0 /* ViewController.swift */,
@@ -141,6 +155,7 @@
 				0FF19507222C0C89005FC0B0 /* Info.plist in Resources */,
 				0FF19504222C0C89005FC0B0 /* Main.storyboard in Resources */,
 				0FF19508222C0C89005FC0B0 /* LaunchScreen.storyboard in Resources */,
+				0FC29ADA222D61C40070EF13 /* AnnotationDetailViewController.xib in Resources */,
 				0FF1950A222C0C99005FC0B0 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -153,6 +168,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0FF19506222C0C89005FC0B0 /* ViewController.swift in Sources */,
+				0FC29ADB222D61C40070EF13 /* AnnotationDetailViewController.swift in Sources */,
 				0FF19505222C0C89005FC0B0 /* AppDelegate.swift in Sources */,
 				0FF1950F222C10AE005FC0B0 /* PizzaHistoryAnnotations.swift in Sources */,
 				0FF1950C222C0CB5005FC0B0 /* MapView+Annotation.swift in Sources */,
