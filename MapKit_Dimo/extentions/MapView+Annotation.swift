@@ -12,7 +12,6 @@ import MapKit
 extension ViewController : MKMapViewDelegate{
     
     
-    
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         var annotationView = MKAnnotationView()
         guard let annotation = annotation as? PizzaAnnotation else {
@@ -43,6 +42,31 @@ extension ViewController : MKMapViewDelegate{
         vc.annotation = view.annotation as! PizzaAnnotation
         present(vc, animated: false,completion: nil)
     }
+    
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        
+        if let poly = overlay as? MKPolyline{
+            let renderer = MKPolylineRenderer(polyline: poly)
+            if poly.title == "grandTour"{
+                renderer.strokeColor = UIColor.red
+                renderer.lineWidth = 5.0
+                return renderer
+            }
+            renderer.lineDashPattern = [20,10,2,10]
+            renderer.strokeColor = UIColor.blue
+            renderer.lineWidth = 1.0
+            return renderer
+        }
+        
+        if let circle = overlay as? MKCircle{
+            let renderer = MKCircleRenderer(circle: circle)
+            renderer.fillColor = UIColor(red: 0.0, green: 0.1, blue: 1.0, alpha: 0.1)
+            renderer.strokeColor = UIColor.blue
+            renderer.lineWidth = 1.0
+            return renderer
+        }
+        return MKOverlayRenderer(overlay: overlay)
+    }
 }
 
 class PizzaAnnotation: NSObject, MKAnnotation{
@@ -52,7 +76,7 @@ class PizzaAnnotation: NSObject, MKAnnotation{
     var identifier  = "Pin"
     var historyText = ""
     var pizzaPhoto = #imageLiteral(resourceName: "pizza pin")
-    
+    var deliveryDistance = 0.0
     init(coordinate: CLLocationCoordinate2D , title: String?, subtitle: String?){
         self.coordinate = coordinate
         self.title = title
