@@ -12,8 +12,8 @@ import MapKit
  Naples: 40.8367321 , 14.2468856
  New York: 40.7216294 , -73.995453
  Chicago: 41.892479 , -87.6267592
- Chatham: beverly Hils: 34.0674607 , -118.3977309
- Beverly Hills: 34.0674607,-118.3977309
+ Chatham: 42.4056555,-82.1860369
+ beverly Hils: 34.0674607 , -118.3977309
  
  208 S. Beverly Drive Beverly Hills CA:34.0647691,-118.3991328
  2121 N. Clark St Chicago IL: 41.9206921,-87.6375361
@@ -83,12 +83,12 @@ class ViewController: UIViewController {
             updateMapCameraWith(heading: 180.0, altitute: 200)
             break
         case 4:
-            location = CLLocationCoordinate2DMake(34.0674607 , -118.3977309)
+            location = CLLocationCoordinate2DMake(42.4056555,-82.1860369)
             updateMapCameraWith(heading: -20.0, altitute: 70)
             break
         default:
             location = CLLocationCoordinate2DMake(40.8367321,14.2468856)
-            updateMapCameraWith(heading: 45.0, altitute: 45)
+            updateMapCameraWith(heading: 45.0, altitute: 1500)
         }
         
 //        updateMapWithRegion(distanec: 100)
@@ -103,6 +103,7 @@ class ViewController: UIViewController {
         map.delegate = self
         map.addAnnotations(PizzaHistoryAnnotations().annotations)
         addDeliveryOverlay()
+        addPolyline()
     }
 
     func updateMapWithRegion(distanec: CLLocationDistance) {
@@ -119,11 +120,29 @@ class ViewController: UIViewController {
         map.camera = camera
     }
     
+    func addPolyline() {
+        let annotations = PizzaHistoryAnnotations().annotations
+        let beverlyHills1 = annotations[5].coordinate
+        let benerlyHills2 = annotations[6].coordinate
+        let boly = MKPolyline(coordinates: [beverlyHills1,benerlyHills2], count: 2)
+        boly.title = "BeverlyHills_Line"
+        
+        var cordenates = [CLLocationCoordinate2D]()
+        for annotation in PizzaHistoryAnnotations().annotations {
+            cordenates.append(annotation.coordinate)
+        }
+        let grandTour = MKPolyline(coordinates: cordenates, count: cordenates.count)
+        grandTour.title = "grandTour"
+        
+        map.addOverlays([boly,grandTour])
+        
+    }
     func addDeliveryOverlay()  {
-        let radius = 500.0
         for annotation in map.annotations {
-            let circle = MKCircle(center: annotation.coordinate, radius: radius)
-            map.addOverlay(circle)
+            if let annotation = annotation as? PizzaAnnotation{
+                let circle = MKCircle(center: annotation.coordinate, radius: annotation.deliveryDistance)
+                map.addOverlay(circle)
+            }
         }
     }
 
