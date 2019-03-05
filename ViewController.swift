@@ -29,6 +29,9 @@ class ViewController: UIViewController {
     var camera = MKMapCamera()
     var pich = 0
     var isOn = false
+    
+    var locationManager = CLLocationManager()
+    
     @IBAction func featyres(_ sender: Any) {
         isOn = !isOn
         map.showsBuildings = isOn
@@ -95,6 +98,9 @@ class ViewController: UIViewController {
         
     }
     
+    @IBAction func findHereAction(_ sender: Any) {
+        setupCoreLocation()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -104,6 +110,7 @@ class ViewController: UIViewController {
         map.addAnnotations(PizzaHistoryAnnotations().annotations)
         addDeliveryOverlay()
         addPolyline()
+        locationManager.delegate = self
     }
 
     func updateMapWithRegion(distanec: CLLocationDistance) {

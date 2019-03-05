@@ -55,7 +55,10 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JLI-AA-h0b">
                                 <rect key="frame" x="224" y="30" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Here"/>
+                                <connections>
+                                    <action selector="findHereAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="g5y-ct-lfm"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rap-CN-TTd">
                                 <rect key="frame" x="288" y="30" width="46" height="30"/>
