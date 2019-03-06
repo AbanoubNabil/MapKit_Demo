@@ -29,6 +29,7 @@ class ViewController: UIViewController {
     var camera = MKMapCamera()
     var pich = 0
     var isOn = false
+    var heading = 0.0
     
     var locationManager = CLLocationManager()
     

@@ -18,6 +18,11 @@ extension ViewController : CLLocationManagerDelegate{
             map.setUserTrackingMode(.follow, animated: true)
             locationManager.startUpdatingLocation()
         }
+        if CLLocationManager.headingAvailable() {
+            locationManager.startUpdatingHeading()
+        }else{
+            print("magnetometer not supported")
+        }
     }
     
     func disableLocationServeces() {
@@ -52,13 +57,17 @@ extension ViewController : CLLocationManagerDelegate{
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let new_location = locations.last
         location = new_location!.coordinate
-        let speed_heading_string = "Heading :\(new_location?.course) at speed/: \((new_location?.speed)! * 2.23694) mph"
+        let speed_heading_string = "Heading :\(heading) at speed/: \((new_location?.speed)! * 2.23694) mph"
         print(speed_heading_string)
         let displayString = "\(new_location?.timestamp) Coord: \(location) Alt: \(new_location!.altitude) meters"
         print(displayString)
         updateMapWithRegion(distanec: 200)
         let pizzaPin = PizzaAnnotation(coordinate: location, title: displayString, subtitle: "")
         map.addAnnotation(pizzaPin)
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
+        heading = newHeading.magneticHeading
     }
 
 }
