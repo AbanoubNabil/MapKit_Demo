@@ -33,6 +33,7 @@ class ViewController: UIViewController {
     var locationManager = CLLocationManager()
     
     @IBAction func featyres(_ sender: Any) {
+        disableLocationServeces()
         isOn = !isOn
         map.showsBuildings = isOn
         map.showsScale = isOn
