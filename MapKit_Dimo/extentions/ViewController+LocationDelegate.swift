@@ -13,11 +13,15 @@ import MapKit
 extension ViewController : CLLocationManagerDelegate{
     
     func enableLocationServeces() {
-        
+        if CLLocationManager.locationServicesEnabled(){
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            map.setUserTrackingMode(.follow, animated: true)
+            locationManager.startUpdatingLocation()
+        }
     }
     
     func disableLocationServeces() {
-        
+        locationManager.stopUpdatingLocation()
     }
     
     func setupCoreLocation() {
@@ -25,15 +29,16 @@ extension ViewController : CLLocationManagerDelegate{
         case .notDetermined:
             locationManager.requestAlwaysAuthorization()
             break
-        case .authorizedAlways:
+        case .authorizedAlways , .authorizedWhenInUse:
             enableLocationServeces()
+        
         default:
             break
         }
     }
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        switch CLLocationManager.authorizationStatus() {
+        switch status {
         case .authorizedAlways:
             print("authorized")
             break
@@ -42,6 +47,16 @@ extension ViewController : CLLocationManagerDelegate{
         default:
             break
         }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let new_location = locations.last
+        location = new_location!.coordinate
+        let displayString = "\(new_location?.timestamp) Coord: \(location) Alt: \(new_location!.altitude) meters"
+        print(displayString)
+        updateMapWithRegion(distanec: 200)
+        let pizzaPin = PizzaAnnotation(coordinate: location, title: displayString, subtitle: "")
+        map.addAnnotation(pizzaPin)
     }
 
 }

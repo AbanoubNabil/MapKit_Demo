@@ -66,8 +66,8 @@ class ViewController: UIViewController {
     
     @IBAction func segmented(_ sender: Any) {
         
-        var segmented = sender as! UISegmentedControl
-        
+        let segmented = sender as! UISegmentedControl
+        disableLocationServeces()
         switch segmented.selectedSegmentIndex {
         case 0:
             location = CLLocationCoordinate2DMake(40.8367321 , 14.2468856)
@@ -107,10 +107,10 @@ class ViewController: UIViewController {
 //        updateMapWithRegion(distanec: 100) // 100 meters around
     updateMapCameraWith(heading: 0, altitute: 200.0)
         map.delegate = self
+        locationManager.delegate = self
         map.addAnnotations(PizzaHistoryAnnotations().annotations)
         addDeliveryOverlay()
         addPolyline()
-        locationManager.delegate = self
     }
 
     func updateMapWithRegion(distanec: CLLocationDistance) {
