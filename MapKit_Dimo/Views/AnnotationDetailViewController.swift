@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 
 class AnnotationDetailViewController: UIViewController {
     var annotation:PizzaAnnotation!
@@ -23,9 +24,37 @@ class AnnotationDetailViewController: UIViewController {
         titleLabel.text = annotation.title
         pizzaPhoto.image = annotation.pizzaPhoto
         historyText.text = annotation.historyText
-        // Do any additional setup after loading the view.
+        placeMark(annotation: annotation) { (placemark) in
+            if let placeMark = placemark{
+                var locationString = ""
+                if let city = placeMark.locality{
+                    locationString += city
+                }
+                if let state = placeMark.administrativeArea{
+                    locationString += state
+                }
+                if let country = placeMark.country{
+                    locationString += country
+                }
+                self.historyText.text = locationString + "\n\n" + self.annotation.historyText
+            }else{
+                print("place mark not found")
+            }
+            
+        }
     }
 
-    
+    func placeMark(annotation: PizzaAnnotation, completion: @escaping (CLPlacemark?) -> Void) {
+        let coordinate = annotation.coordinate
+        let location = CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
+        let geocoder = CLGeocoder()
+        geocoder.reverseGeocodeLocation(location) { (placemarks, error) in
+            if let placemarks = placemarks{
+                completion(placemarks.first)
+            }else{
+                completion(nil)
+            }
+        }
+    }
 
 }
