@@ -105,13 +105,33 @@ class ViewController: UIViewController {
     }
     
     @IBAction func find(_ sender: Any) {
-        let address = "2121 N. Clark St. IL"
-        getCoordinate(address: address) { (coordinate, location, error) in
-            if let coordinate = coordinate{
-                self.map.camera.centerCoordinate = coordinate
-                self.map.camera.altitude = 1000.0
-                let pin = PizzaAnnotation(coordinate: coordinate, title: address, subtitle: location)
-                self.map.addAnnotation(pin)
+//        let address = "2121 N. Clark St. IL"
+//        getCoordinate(address: address) { (coordinate, location, error) in
+//            if let coordinate = coordinate{
+//                self.map.camera.centerCoordinate = coordinate
+//                self.map.camera.altitude = 1000.0
+//                let pin = PizzaAnnotation(coordinate: coordinate, title: address, subtitle: location)
+//                self.map.addAnnotation(pin)
+//            }
+//        }
+        let request = MKLocalSearch.Request()
+        request.naturalLanguageQuery = "Pizza"
+        updateMapWithRegion(distanec: 500)
+        request.region = map.region
+        let search = MKLocalSearch(request: request)
+        search.start { (response, error) in
+            if error == nil{
+                if let response = response{
+                    for mapItem in response.mapItems{
+                        let placeMark = mapItem.placemark
+//                        self.map.addAnnotation(placeMark)
+                        let name = mapItem.name
+                        let coordinate = placeMark.coordinate
+                        let streetAddress = placeMark.thoroughfare
+                        let annotation = PizzaAnnotation(coordinate: coordinate, title: name, subtitle: streetAddress)
+                        self.map.addAnnotation(annotation)
+                    }
+                }
             }
         }
     }
