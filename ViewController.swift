@@ -104,6 +104,17 @@ class ViewController: UIViewController {
         setupCoreLocation()
     }
     
+    @IBAction func find(_ sender: Any) {
+        let address = "2121 N. Clark St. IL"
+        getCoordinate(address: address) { (coordinate, location, error) in
+            if let coordinate = coordinate{
+                self.map.camera.centerCoordinate = coordinate
+                self.map.camera.altitude = 1000.0
+                let pin = PizzaAnnotation(coordinate: coordinate, title: address, subtitle: location)
+                self.map.addAnnotation(pin)
+            }
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 //        updateMapWithRegion(distanec: 100) // 100 meters around
@@ -152,6 +163,22 @@ class ViewController: UIViewController {
             if let annotation = annotation as? PizzaAnnotation{
                 let circle = MKCircle(center: annotation.coordinate, radius: annotation.deliveryDistance)
                 map.addOverlay(circle)
+            }
+        }
+    }
+    
+    func getCoordinate(address: String, completion : @escaping (CLLocationCoordinate2D?, String, NSError?)->Void) {
+        let geoCoder = CLGeocoder()
+        geoCoder.geocodeAddressString(address) { (placemarks, error) in
+            if error == nil {
+                if let placemark = placemarks?[0]{
+                    let coordinate = placemark.location?.coordinate
+                    let location = placemark.locality! + " " + placemark.isoCountryCode!
+                    completion(coordinate, location, nil)
+                    return
+                }
+            }else{
+                completion(nil, "", error as NSError?)
             }
         }
     }
