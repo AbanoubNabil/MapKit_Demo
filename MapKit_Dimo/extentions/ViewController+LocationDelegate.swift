@@ -23,6 +23,7 @@ extension ViewController : CLLocationManagerDelegate{
         }else{
             print("magnetometer not supported")
         }
+        monitorRegions(center: onRamp, radios: 200, id: "1")
     }
     
     func disableLocationServeces() {
@@ -68,6 +69,38 @@ extension ViewController : CLLocationManagerDelegate{
     
     func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
         heading = newHeading.magneticHeading
+    }
+    
+    func monitorRegions(center : CLLocationCoordinate2D, radios: CLLocationDistance, id: String) {
+        if CLLocationManager.authorizationStatus() == .authorizedAlways {
+            if CLLocationManager.isMonitoringAvailable(for: CLCircularRegion.self) {
+                let region = CLCircularRegion(center: center, radius: radios, identifier: id)
+                region.notifyOnExit = true
+                region.notifyOnEntry = true
+                locationManager.startMonitoring(for: region)
+            }
+        }
+        
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
+        let circularRegion = region as! CLCircularRegion
+        if circularRegion.identifier == "1" {
+            let alert = UIAlertController(title: "you are getting out", message: "you are on the ramp", preferredStyle: .alert)
+            let ok = UIAlertAction(title: "dismiss", style: .default, handler: nil)
+            alert.addAction(ok)
+            present(alert, animated: true, completion: nil)
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
+        let circularRegion = region as! CLCircularRegion
+        if circularRegion.identifier == "1" {
+            let alert = UIAlertController(title: "you are getting in", message: "you are coming to the ramp", preferredStyle: .alert)
+            let ok = UIAlertAction(title: "dismiss", style: .default, handler: nil)
+            alert.addAction(ok)
+            present(alert, animated: true, completion: nil)
+        }
     }
 
 }

@@ -30,7 +30,7 @@ class ViewController: UIViewController {
     var pich = 0
     var isOn = false
     var heading = 0.0
-    
+    let onRamp = CLLocationCoordinate2D(latitude: 37.3346 , longitude: -122.0345)
     var locationManager = CLLocationManager()
     
     @IBAction func featyres(_ sender: Any) {
@@ -146,6 +146,7 @@ class ViewController: UIViewController {
         map.addOverlays([boly,grandTour])
         
     }
+    
     func addDeliveryOverlay()  {
         for annotation in map.annotations {
             if let annotation = annotation as? PizzaAnnotation{
