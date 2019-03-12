@@ -21,11 +21,11 @@
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="dBr-iq-BUE">
                                 <rect key="frame" x="0.0" y="639" width="375" height="29"/>
                                 <segments>
-                                    <segment title="MMD"/>
-                                    <segment title="insta Bug"/>
-                                    <segment title="MMD UK"/>
-                                    <segment title="CrossOver"/>
-                                    <segment title="Evirest"/>
+                                    <segment title="Naples"/>
+                                    <segment title="new york"/>
+                                    <segment title="Chicago"/>
+                                    <segment title="BeverlyHills"/>
+                                    <segment title="Chatham"/>
                                 </segments>
                                 <connections>
                                     <action selector="segmented:" destination="BYZ-38-t0r" eventType="valueChanged" id="0jo-uF-Dm6"/>
@@ -33,15 +33,25 @@
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="opc-DG-rKb">
                                 <rect key="frame" x="32" y="30" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="3d"/>
+                                <connections>
+                                    <action selector="changePichaction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5z9-Tq-fef"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L39-7i-osW">
-                                <rect key="frame" x="96" y="30" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                                <rect key="frame" x="96" y="30" width="46" height="27"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <state key="normal" title="Type"/>
+                                <connections>
+                                    <action selector="mapType:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Knj-3a-qwA"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xcC-sX-xMM">
                                 <rect key="frame" x="160" y="30" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="features"/>
+                                <connections>
+                                    <action selector="featyres:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ye3-qO-K1s"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JLI-AA-h0b">
                                 <rect key="frame" x="224" y="30" width="46" height="30"/>
@@ -51,8 +61,11 @@
                                 <rect key="frame" x="288" y="30" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
                             </button>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="3TE-zL-nlb">
-                                <rect key="frame" x="0.0" y="68" width="375" height="569"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsBuildings="NO" showsCompass="NO" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3TE-zL-nlb">
+                                <rect key="frame" x="0.0" y="65" width="375" height="572"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="keC-TX-cGj"/>
+                                </connections>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -83,6 +96,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="changePich" destination="opc-DG-rKb" id="t4b-3q-B1d"/>
                         <outlet property="map" destination="3TE-zL-nlb" id="tR3-sb-US0"/>
                     </connections>
                 </viewController>
