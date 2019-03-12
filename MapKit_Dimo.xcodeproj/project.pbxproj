@@ -7,30 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0FC29ADA222D61C40070EF13 /* AnnotationDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FC29AD8222D61C40070EF13 /* AnnotationDetailViewController.xib */; };
-		0FC29ADB222D61C40070EF13 /* AnnotationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC29AD9222D61C40070EF13 /* AnnotationDetailViewController.swift */; };
-		0FF19504222C0C89005FC0B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FF194FF222C0C89005FC0B0 /* Main.storyboard */; };
-		0FF19505222C0C89005FC0B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF19500222C0C89005FC0B0 /* AppDelegate.swift */; };
-		0FF19506222C0C89005FC0B0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF19501222C0C89005FC0B0 /* ViewController.swift */; };
-		0FF19507222C0C89005FC0B0 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0FF19502222C0C89005FC0B0 /* Info.plist */; };
-		0FF19508222C0C89005FC0B0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FF19503222C0C89005FC0B0 /* LaunchScreen.storyboard */; };
-		0FF1950A222C0C99005FC0B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FF19509222C0C99005FC0B0 /* Assets.xcassets */; };
-		0FF1950C222C0CB5005FC0B0 /* MapView+Annotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF1950B222C0CB5005FC0B0 /* MapView+Annotation.swift */; };
-		0FF1950F222C10AE005FC0B0 /* PizzaHistoryAnnotations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF1950E222C10AE005FC0B0 /* PizzaHistoryAnnotations.swift */; };
+		0FDF7A2922008C5D0087655E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDF7A2822008C5D0087655E /* AppDelegate.swift */; };
+		0FDF7A2B22008C5D0087655E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDF7A2A22008C5D0087655E /* ViewController.swift */; };
+		0FDF7A2E22008C5D0087655E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FDF7A2C22008C5D0087655E /* Main.storyboard */; };
+		0FDF7A3022008C5F0087655E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FDF7A2F22008C5F0087655E /* Assets.xcassets */; };
+		0FDF7A3322008C5F0087655E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FDF7A3122008C5F0087655E /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0FC29AD8222D61C40070EF13 /* AnnotationDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AnnotationDetailViewController.xib; sourceTree = "<group>"; };
-		0FC29AD9222D61C40070EF13 /* AnnotationDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnnotationDetailViewController.swift; sourceTree = "<group>"; };
 		0FDF7A2522008C5D0087655E /* MapKit_Dimo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapKit_Dimo.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		0FF194FF222C0C89005FC0B0 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = SOURCE_ROOT; };
-		0FF19500222C0C89005FC0B0 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = SOURCE_ROOT; };
-		0FF19501222C0C89005FC0B0 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = SOURCE_ROOT; };
-		0FF19502222C0C89005FC0B0 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = MapKit_Dimo/Info.plist; sourceTree = SOURCE_ROOT; };
-		0FF19503222C0C89005FC0B0 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
-		0FF19509222C0C99005FC0B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = SOURCE_ROOT; };
-		0FF1950B222C0CB5005FC0B0 /* MapView+Annotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MapView+Annotation.swift"; sourceTree = "<group>"; };
-		0FF1950E222C10AE005FC0B0 /* PizzaHistoryAnnotations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PizzaHistoryAnnotations.swift; sourceTree = "<group>"; };
+		0FDF7A2822008C5D0087655E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		0FDF7A2A22008C5D0087655E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0FDF7A2D22008C5D0087655E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0FDF7A2F22008C5F0087655E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0FDF7A3222008C5F0087655E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		0FDF7A3422008C5F0087655E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,15 +35,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0FC29AD7222D618E0070EF13 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				0FC29AD9222D61C40070EF13 /* AnnotationDetailViewController.swift */,
-				0FC29AD8222D61C40070EF13 /* AnnotationDetailViewController.xib */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
 		0FDF7A1C22008C5D0087655E = {
 			isa = PBXGroup;
 			children = (
@@ -72,25 +54,14 @@
 		0FDF7A2722008C5D0087655E /* MapKit_Dimo */ = {
 			isa = PBXGroup;
 			children = (
-				0FC29AD7222D618E0070EF13 /* Views */,
-				0FF1950D222C0CBA005FC0B0 /* extentions */,
-				0FF1950E222C10AE005FC0B0 /* PizzaHistoryAnnotations.swift */,
-				0FF19501222C0C89005FC0B0 /* ViewController.swift */,
-				0FF19502222C0C89005FC0B0 /* Info.plist */,
-				0FF19500222C0C89005FC0B0 /* AppDelegate.swift */,
-				0FF19509222C0C99005FC0B0 /* Assets.xcassets */,
-				0FF19503222C0C89005FC0B0 /* LaunchScreen.storyboard */,
-				0FF194FF222C0C89005FC0B0 /* Main.storyboard */,
+				0FDF7A2822008C5D0087655E /* AppDelegate.swift */,
+				0FDF7A2A22008C5D0087655E /* ViewController.swift */,
+				0FDF7A2C22008C5D0087655E /* Main.storyboard */,
+				0FDF7A2F22008C5F0087655E /* Assets.xcassets */,
+				0FDF7A3122008C5F0087655E /* LaunchScreen.storyboard */,
+				0FDF7A3422008C5F0087655E /* Info.plist */,
 			);
 			path = MapKit_Dimo;
-			sourceTree = "<group>";
-		};
-		0FF1950D222C0CBA005FC0B0 /* extentions */ = {
-			isa = PBXGroup;
-			children = (
-				0FF1950B222C0CB5005FC0B0 /* MapView+Annotation.swift */,
-			);
-			path = extentions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,7 +96,6 @@
 				TargetAttributes = {
 					0FDF7A2422008C5D0087655E = {
 						CreatedOnToolsVersion = 10.1;
-						LastSwiftMigration = 1010;
 					};
 				};
 			};
@@ -152,11 +122,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0FF19507222C0C89005FC0B0 /* Info.plist in Resources */,
-				0FF19504222C0C89005FC0B0 /* Main.storyboard in Resources */,
-				0FF19508222C0C89005FC0B0 /* LaunchScreen.storyboard in Resources */,
-				0FC29ADA222D61C40070EF13 /* AnnotationDetailViewController.xib in Resources */,
-				0FF1950A222C0C99005FC0B0 /* Assets.xcassets in Resources */,
+				0FDF7A3322008C5F0087655E /* LaunchScreen.storyboard in Resources */,
+				0FDF7A3022008C5F0087655E /* Assets.xcassets in Resources */,
+				0FDF7A2E22008C5D0087655E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -167,15 +135,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0FF19506222C0C89005FC0B0 /* ViewController.swift in Sources */,
-				0FC29ADB222D61C40070EF13 /* AnnotationDetailViewController.swift in Sources */,
-				0FF19505222C0C89005FC0B0 /* AppDelegate.swift in Sources */,
-				0FF1950F222C10AE005FC0B0 /* PizzaHistoryAnnotations.swift in Sources */,
-				0FF1950C222C0CB5005FC0B0 /* MapView+Annotation.swift in Sources */,
+				0FDF7A2B22008C5D0087655E /* ViewController.swift in Sources */,
+				0FDF7A2922008C5D0087655E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		0FDF7A2C22008C5D0087655E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0FDF7A2D22008C5D0087655E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		0FDF7A3122008C5F0087655E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0FDF7A3222008C5F0087655E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		0FDF7A3522008C5F0087655E /* Debug */ = {
@@ -298,7 +282,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7G7238MTLW;
 				INFOPLIST_FILE = MapKit_Dimo/Info.plist;
@@ -308,7 +291,6 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mmd.MapKit-Dimo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -318,7 +300,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7G7238MTLW;
 				INFOPLIST_FILE = MapKit_Dimo/Info.plist;
